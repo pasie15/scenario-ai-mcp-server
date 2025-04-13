@@ -1,6 +1,6 @@
-# Scenario AI MCP Server
+# Scenario.com MCP Server
 
-This project provides a Model Context Protocol (MCP) server for the Scenario AI API. The server allows you to generate images from text prompts and remove backgrounds from images using the Scenario AI platform (https://app.scenario.com/).
+This project provides a Model Context Protocol (MCP) server for the Scenario.com API. The server allows you to generate images from text prompts and remove backgrounds from images using the Scenario.com platform (https://app.scenario.com/).
 
 ## Repository Structure
 
@@ -47,7 +47,7 @@ The repository is organized as follows:
    ```
    pip install -r src/requirements.txt
    ```
-3. Create a `.env` file with your Scenario AI API credentials:
+3. Create a `.env` file with your Scenario.com API credentials:
    ```
    SCENARIO_API_KEY=your_api_key
    SCENARIO_API_SECRET=your_api_secret
@@ -79,7 +79,7 @@ scripts/start_server.bat
 
 ## Available MCP Tools
 
-The Scenario AI MCP Server provides the following tools that can be used with the Roo-Cline interface:
+The Scenario.com MCP Server provides the following tools that can be used with the Roo-Cline interface:
 
 ### Tools
 
@@ -169,7 +169,7 @@ scripts/run_tests.bat
 ./scripts/run_tests.sh
 ```
 
-The `test_server.py` file provides comprehensive documentation on how to use the Scenario AI MCP Server, including:
+The `test_server.py` file provides comprehensive documentation on how to use the Scenario.com MCP Server, including:
 - Server setup instructions
 - Available tools and their parameters
 - Available resources
@@ -194,7 +194,7 @@ If you encounter issues starting the server, check the following:
    pip install -r src/requirements.txt
    ```
 
-3. Verify that your `.env` file or environment variables are set correctly with your Scenario AI API credentials.
+3. Verify that your `.env` file or environment variables are set correctly with your Scenario.com API credentials.
 
 4. If you're using a virtual environment, make sure it's activated before running the server.
 
@@ -204,7 +204,7 @@ If you encounter errors when using the API:
 
 1. Check that your API credentials are correct.
 2. Verify that the model ID you're using is valid.
-3. Check the Scenario AI API documentation for any service disruptions or changes.
+3. Check the Scenario.com API documentation for any service disruptions or changes.
 
 ## License
 
