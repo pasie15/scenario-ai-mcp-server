@@ -1,6 +1,6 @@
 # Scenario AI MCP Server
 
-This project provides a Model Context Protocol (MCP) server for the Scenario AI API. The server allows you to generate images from text prompts and remove backgrounds from images.
+This project provides a Model Context Protocol (MCP) server for the Scenario AI API. The server allows you to generate images from text prompts and remove backgrounds from images using the Scenario AI platform (https://app.scenario.com/).
 
 ## Repository Structure
 
@@ -53,11 +53,11 @@ The repository is organized as follows:
    SCENARIO_API_SECRET=your_api_secret
    SCENARIO_MODEL_ID=your_default_model_id  # Optional
    ```
-
-4. Install the MCP SDK:
-   ```
-   pip install mcp
-   ```
+   
+   4. Install the MCP SDK:
+      ```
+      pip install mcp
+      ```
 
 ## Running the Server
 
@@ -76,6 +76,29 @@ scripts/start_server.bat
 # Linux/macOS
 ./scripts/start_server.sh
 ```
+
+## Available MCP Tools
+
+The Scenario AI MCP Server provides the following tools that can be used with the Roo-Cline interface:
+
+### Tools
+
+1. **generate_image**: Generate an image from a text prompt
+   - Parameters:
+     - `prompt` (required): The text prompt describing the image to generate
+     - `model_id` (optional): The model ID to use (defaults to environment variable)
+     - `negative_prompt` (optional): Text describing what to avoid in the image
+     - `num_samples` (optional): Number of images to generate
+
+2. **remove_background**: Remove the background from an image
+   - Parameters:
+     - `asset_id` (required): The asset ID of the image to process
+
+### Resources
+
+1. **status://info**: Get information about the server status
+2. **job://{job_id}**: Get information about a job
+3. **asset://{asset_id}**: Get information about an asset
 
 ## Using the Examples
 
@@ -96,7 +119,7 @@ scripts/run_client_example.bat
 The `scripts/` directory contains utility scripts to help you run the server, examples, and tests:
 
 ### Server Scripts
-- `start_server.bat` (Windows) / `start_server.sh` (Linux/macOS): 
+- `start_server.bat` (Windows) / `start_server.sh` (Linux/macOS):
   These scripts start the MCP server using the `mcp dev` command, which runs the server in development mode.
   
   Usage:
@@ -109,7 +132,7 @@ The `scripts/` directory contains utility scripts to help you run the server, ex
   ```
 
 ### Example Scripts
-- `run_client_example.bat` (Windows) / `run_client_example.sh` (Linux/macOS): 
+- `run_client_example.bat` (Windows) / `run_client_example.sh` (Linux/macOS):
   These scripts run the example client that demonstrates how to use the MCP server.
   
   Usage:
@@ -122,7 +145,7 @@ The `scripts/` directory contains utility scripts to help you run the server, ex
   ```
 
 ### Test Scripts
-- `run_tests.bat` (Windows) / `run_tests.sh` (Linux/macOS): 
+- `run_tests.bat` (Windows) / `run_tests.sh` (Linux/macOS):
   These scripts run the test suite that verifies the MCP server functionality.
   
   Usage:
