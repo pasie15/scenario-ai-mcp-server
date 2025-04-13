@@ -1,12 +1,12 @@
-# Scenario AI MCP Server Design Plan
+# Scenario.com MCP Server Design Plan
 
 ## Overview
 
-The Scenario AI MCP Server is designed to provide a Model Context Protocol (MCP) interface to the Scenario AI API. This allows AI assistants to generate images and remove backgrounds from images using the Scenario AI API.
+The Scenario.com MCP Server is designed to provide a Model Context Protocol (MCP) interface to the Scenario.com API. This allows AI assistants to generate images and remove backgrounds from images using the Scenario.com API.
 
 ## Architecture
 
-The server is built using the FastMCP framework, which provides a simple way to create MCP servers. The server exposes tools and resources that can be used by AI assistants to interact with the Scenario AI API.
+The server is built using the FastMCP framework, which provides a simple way to create MCP servers. The server exposes tools and resources that can be used by AI assistants to interact with the Scenario.com API.
 
 ### Tools
 
@@ -21,7 +21,7 @@ The server is built using the FastMCP framework, which provides a simple way to 
 
 ## Implementation
 
-The server is implemented in Python using the FastMCP framework. The server uses the Scenario AI API to generate images and remove backgrounds from images.
+The server is implemented in Python using the FastMCP framework. The server uses the Scenario.com API to generate images and remove backgrounds from images.
 
 ### Dependencies
 
@@ -33,13 +33,13 @@ The server is implemented in Python using the FastMCP framework. The server uses
 
 The server is configured using environment variables:
 
-- `SCENARIO_API_KEY`: The Scenario AI API key
-- `SCENARIO_API_SECRET`: The Scenario AI API secret
+- `SCENARIO_API_KEY`: The Scenario.com API key
+- `SCENARIO_API_SECRET`: The Scenario.com API secret
 - `SCENARIO_MODEL_ID`: The default model ID to use for image generation
 
 ## Future Work
 
-- Add support for more Scenario AI API features
+- Add support for more Scenario.com API features
 - Add support for more image generation models
 - Add support for more image manipulation operations
 - Add support for batch processing
