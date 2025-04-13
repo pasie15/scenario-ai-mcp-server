@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "scenario-ai": {
+      "command": "mcp",
+      "args": ["dev", "src/server.py"],
+      "disabled": false,
+      "autoApprove": [],
+      "alwaysAllow": [],
+      "env": {
+        "SCENARIO_API_KEY": "api_mkhg2tuw84fqgbsdoSkZPAdJ",
+        "SCENARIO_API_SECRET": "DKwKFnw4hcofBH2K3ifPX296",
+        "DEFAULT_MODEL_ID": "model_KMeeJU9mpcfHKB7a1hv9vyW9"
+      }
+    }
+  }
+}
