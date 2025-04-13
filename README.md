@@ -8,7 +8,6 @@ The repository is organized as follows:
 
 - **src/**: Core source code and configuration files
   - `server.py`: Main MCP server implementation
-  - `mcp_settings.json`: Server configuration
   - `requirements.txt`: Project dependencies
   - `setup.py`: Installation script
   - `.gitignore`: Git ignore rules
@@ -64,17 +63,18 @@ The repository is organized as follows:
    pip install -e .
    ```
 
-4. Create a `.env` file with your Scenario.com API credentials:
+4. Create a `.env` file in the root directory with your Scenario.com API credentials:
    ```
    SCENARIO_API_KEY=your_api_key
    SCENARIO_API_SECRET=your_api_secret
    SCENARIO_MODEL_ID=model_KMeeJU9mpcfHKB7a1hv9vyW9  # Change to preferred model
+   ```
    
-   ```
+   > **Important**: The server loads environment variables directly from this `.env` file, so make sure it's properly configured.
 
-5. Install the MCP SDK:
+5. Install the MCP SDK and python-dotenv:
    ```
-   pip install mcp
+   pip install mcp python-dotenv
    ```
 
 6. Add this MCP server configuration to your Cline/Roo-Cline/Cursor/VS Code settings:
@@ -86,14 +86,11 @@ The repository is organized as follows:
      ],
      "disabled": false,
      "autoApprove": [],
-     "alwaysAllow": [],
-     "env": {
-       "SCENARIO_API_KEY": "YOUR_SCENARIO_API_KEY",
-       "SCENARIO_API_SECRET": "YOUR_SCENARIO_API_SECRET",
-       "DEFAULT_MODEL": "model_KMeeJU9mpcfHKB7a1hv9vyW9"
-     }
+     "alwaysAllow": []
    }
    ```
+   
+   > **Note**: Environment variables are loaded from the `.env` file, so they don't need to be specified in the MCP server configuration.
 
 ## Running the Server
 
@@ -229,9 +226,9 @@ Running the tests will display this documentation, which serves as a guide for u
 
 If you encounter issues starting the server, check the following:
 
-1. Make sure the MCP SDK is installed:
+1. Make sure the MCP SDK and python-dotenv are installed:
    ```
-   pip install mcp
+   pip install mcp python-dotenv
    ```
 
 2. Check that your Python environment has all the required dependencies:
@@ -239,7 +236,12 @@ If you encounter issues starting the server, check the following:
    pip install -r src/requirements.txt
    ```
 
-3. Verify that your `.env` file or environment variables are set correctly with your Scenario.com API credentials.
+3. Verify that your `.env` file in the root directory is properly configured with your Scenario.com API credentials:
+   ```
+   SCENARIO_API_KEY=your_api_key
+   SCENARIO_API_SECRET=your_api_secret
+   SCENARIO_MODEL_ID=your_model_id
+   ```
 
 4. If you're using a virtual environment, make sure it's activated before running the server.
 

@@ -1,23 +1,19 @@
 import os
-import json
 import requests
 import base64
 from mcp.server.fastmcp import FastMCP
+from dotenv import load_dotenv
+
+# Load environment variables from .env file in the root directory
+load_dotenv()
 
 # Initialize the FastMCP server
-mcp = FastMCP("ScenarioAIServer")
-
-# Load MCP configuration
-with open("src/mcp_settings.json") as f:
-    mcp_config = json.load(f)
-    
-# Update environment variables
-os.environ.update(mcp_config["mcpServers"]["scenario-ai"]["env"])
+mcp = FastMCP("ScenarioAIServer", log_level="ERROR")
 
 # Environment variables
 API_KEY = os.environ.get("SCENARIO_API_KEY")
 API_SECRET = os.environ.get("SCENARIO_API_SECRET")
-DEFAULT_MODEL = os.environ.get("DEFAULT_MODEL_ID", "model_KMeeJU9mpcfHKB7a1hv9vyW9")
+DEFAULT_MODEL = os.environ.get("SCENARIO_MODEL_ID", "model_KMeeJU9mpcfHKB7a1hv9vyW9")
 
 # Base URL for Scenario API
 BASE_URL = "https://api.cloud.scenario.com/v1"

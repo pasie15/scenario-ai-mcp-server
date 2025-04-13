@@ -7,12 +7,7 @@
       ],
       "disabled": false,
       "autoApprove": [],
-      "alwaysAllow": [],
-      "env": {
-        "SCENARIO_API_KEY": "YOUR_SCENARIO_API_KEY",
-        "SCENARIO_API_SECRET": "YOUR_SCENARIO_API_SECRET",
-        "DEFAULT_MODEL": "model_KMeeJU9mpcfHKB7a1hv9vyW9"
-      }
+      "alwaysAllow": []
     }
   }
 }
