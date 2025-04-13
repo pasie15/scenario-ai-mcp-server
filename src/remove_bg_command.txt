@@ -1,0 +1,1 @@
+Example command to remove background from an image using the Scenario AI MCP Server.
