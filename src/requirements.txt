@@ -1,5 +1,5 @@
 # MCP SDK
-mcp-sdk>=0.1.0
+mcp[cli]>=1.6.0
 
 # HTTP requests
 requests>=2.32.0

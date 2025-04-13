@@ -43,38 +43,83 @@ The repository is organized as follows:
 ## Setup
 
 1. Clone this repository
-2. Install the required dependencies:
+2. (Recommended) Set up a virtual environment:
+   ```bash
+   # Using venv
+   python -m venv scenario-ai
+   .\scenario-ai\Scripts\activate  # Windows
+   source scenario-ai/bin/activate  # Linux/macOS
+
+   # Or using conda
+   conda create -n scenario-ai python=3.8
+   conda activate scenario-ai
    ```
+
+3. Install the required dependencies (either method works):
+   ```bash
+   # Method 1: Using requirements.txt
    pip install -r src/requirements.txt
+
+   # Method 2: Using setup.py (installs as package)
+   pip install -e .
    ```
-3. Create a `.env` file with your Scenario.com API credentials:
+
+4. Create a `.env` file with your Scenario.com API credentials:
    ```
    SCENARIO_API_KEY=your_api_key
    SCENARIO_API_SECRET=your_api_secret
-   SCENARIO_MODEL_ID=your_default_model_id  # Optional
-   ```
+   SCENARIO_MODEL_ID=model_KMeeJU9mpcfHKB7a1hv9vyW9  # Change to preferred model
    
-   4. Install the MCP SDK:
-      ```
-      pip install mcp
-      ```
+   ```
+
+5. Install the MCP SDK:
+   ```
+   pip install mcp
+   ```
+
+6. Add this MCP server configuration to your Cline/Roo-Cline/Cursor/VS Code settings:
+   ```json
+   "scenario-ai": {
+     "command": "python",
+     "args": [
+       "path/to/your/local/scenario.com-mcp-server/src/server.py"
+     ],
+     "disabled": false,
+     "autoApprove": [],
+     "alwaysAllow": [],
+     "env": {
+       "SCENARIO_API_KEY": "YOUR_SCENARIO_API_KEY",
+       "SCENARIO_API_SECRET": "YOUR_SCENARIO_API_SECRET",
+       "DEFAULT_MODEL": "model_KMeeJU9mpcfHKB7a1hv9vyW9"
+     }
+   }
+   ```
 
 ## Running the Server
 
 To run the server:
 
 ```bash
+# Standard method
 python src/server.py
-```
 
-Or use the provided scripts:
+# Recommended: Using MCP dev mode (starts inspector)
+mcp dev src/server.py
 
-```bash
+# Or use the provided scripts:
 # Windows
 scripts/start_server.bat
 
 # Linux/macOS
 ./scripts/start_server.sh
+```
+
+When running with `mcp dev`, you'll see output like:
+```
+Starting MCP inspector...
+⚙️ Proxy server listening on port 6277
+🔍 MCP Inspector is up and running at http://127.0.0.1:6274 🚀
+New SSE connection
 ```
 
 ## Available MCP Tools

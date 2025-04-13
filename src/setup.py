@@ -8,9 +8,10 @@ setup(
     author_email="your.email@example.com",
     packages=find_packages(),
     install_requires=[
-        "mcp-sdk>=0.1.0",
+        "mcp[cli]>=1.6.0",
         "requests>=2.32.0",
         "pydantic>=2.0.0",
+        "pytest>=7.0.0"
     ],
     python_requires=">=3.8",
     classifiers=[

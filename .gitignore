@@ -19,4 +19,5 @@ var/
 .installed.cfg
 *.egg
 .env
-scenario-ai/
+scenario.com/
+.roo/
