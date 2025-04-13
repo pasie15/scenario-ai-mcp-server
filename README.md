@@ -74,7 +74,7 @@ The repository is organized as follows:
 
 5. Install the MCP SDK and python-dotenv:
    ```
-   pip install mcp python-dotenv
+   pip install mcp
    ```
 
 6. Add this MCP server configuration to your Cline/Roo-Cline/Cursor/VS Code settings:
